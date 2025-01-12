@@ -10,19 +10,32 @@
 answer = "y"
 maxCapacity = 0
 pplAttending = 0
-
+dif = 0
 # Functions ---------
 def difference():
     dif = maxCapacity - pplAttending
     if dif < 0:
-        remove = dif * -1
-    elif dif > 0:
-        print(f"You can still add {dif} people to the room and meet fire regulations!")
+       dif = dif * -1
+       print(f"You must remove {dif} people from the room to have the meeting.")
     elif dif == 0:
-        print("You have met the fire regulations, but you cannot add any additional people to the room.")
+        print("You have perfectly met the requirements and you are clear to have the meeting in this room.")
+    elif dif > 0:
+       print(f"You can add {dif} people to the room and still meet the requirements.")
+
+def decision():
+    answer = input("Would you like to check another room?: (y/n) ").lower()
+    if answer != "y" and answer != "n":
+        answer = input("Invalid entry, please try again. Would you like to check another room? (y/n): ")
+    return answer
 #--------------------
 
 while answer == "y":
-    float(input(print("Enter the amount of people attending the meeting: ")))
-    float(input(print("Enter the maximum capacity of people in the room as per fire regulations: ")))
+    meetingName = input("Enter the name of the meeting: ")
+    pplAttending = float(input("Enter the amount of people attending the meeting: "))
+    maxCapacity = float(input("Enter the maximum capacity of people in the room as per fire regulations: "))
+    difference()
+    answer = decision()
+print("Goodbye.")
+
+
     
