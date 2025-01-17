@@ -3,7 +3,7 @@
 # Lab 2
 # 1/13/2025
 
-# Program Prompt: 
+# Program Prompt: Create a program that processes the given file, displays the data correctly, and gives a final count of how many computers were listed in the file
 
 # Variable Dictionary:
 # (I know this is for variables but this beginning part is for me so I can reference what each record in the data is)
