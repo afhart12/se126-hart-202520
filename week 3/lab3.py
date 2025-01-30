@@ -15,6 +15,10 @@ notRegCount = 0
 noVoteCount = 0
 votedCount = 0
 
+num = []
+age =[]
+
+
 with open("week 3/voters_202040.csv") as csvfile:
     file = csv.reader(csvfile)
 
