@@ -3,9 +3,25 @@
 # 1/26/2025
 # Lab 3
 
-# Program Prompt: 
+# Program Prompt: Construct a program that will analyze potential voters. The program should generate the following totals:
 
-# Variable dictionary:
+#Number of individuals not eligible to register.
+#Number of individuals who are old enough to vote but have not registered.
+#Number of individuals who are eligible to vote but did not vote.
+#Number of individuals who did vote.
+#Number of records processed.
+ 
+
+# Variable dictionary: 
+# recordCount - amount of records in the csv file
+# notEligCount - people not able to register to vote
+# notRegCount - people not registered to vote
+# noVoteCount - people who did not vote
+# votedCount - people who voted
+# num - list to store voter id numbers
+# age - list to store voter ages
+# reg = list to store registration status
+# votes  = list to store voting status
 
 import csv
 
