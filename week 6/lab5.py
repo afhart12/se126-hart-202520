@@ -158,6 +158,11 @@ while menu == "y":
         found = []
 
         search = "Avaliable"
+        for i in range(0, len(status))
+            if search == status[i]:
+                found.append(i)
+
+        
             
 
 
