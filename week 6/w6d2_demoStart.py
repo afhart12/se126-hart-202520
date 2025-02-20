@@ -183,7 +183,7 @@ while ans == "y":
         for i in range(0, len(meaning)):
             if search in meaning[i].lower():
                 found.append(i)
-       #display results
+        #display results
         if not found: 
             print(f"Sorry, your search for {search} came up empty.")
 

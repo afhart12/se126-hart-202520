@@ -3,7 +3,7 @@
 # SE126.04
 # February 14, 2025
 
-# Prompt:
+# Prompt: with the book list csv file, provide the following menu and options to the user and perform the task when it is chosen:
 
 # library menu:
 # 1 - all data, print statement
@@ -11,7 +11,7 @@
 # 3 - author, sequential
 # 4 - genre, sequential
 # 5 - one specific library number item, binary search
-# 6 - sequential, status of avaliable
+# 6 - status of avaliable, sequential
 # 7 - status of on loan, sequential
 # 8 - exit the loop
 
@@ -161,6 +161,25 @@ while menu == "y":
         for i in range(0, len(status))
             if search == status[i]:
                 found.append(i)
+            
+        print(f"{libnum[found[i]]:7}  {title[found[i]]:32}  {author[found[i]]:25}  {genre[found[i]]:15} {pgcount[found[i]]:4} {status[found[i]]:9}")
+
+    elif opt == "7":
+
+        found = []
+
+        search = "On Loan"
+        for i in range(0, len(status))
+            if search == status[i]:
+                found.append(i)
+            
+        print(f"{libnum[found[i]]:7}  {title[found[i]]:32}  {author[found[i]]:25}  {genre[found[i]]:15} {pgcount[found[i]]:4} {status[found[i]]:9}")
+
+    elif opt == "8":
+        menu == "n"
+
+
+print("Goodbye.")
 
         
             
