@@ -133,3 +133,16 @@ print("\nThank you for using my program.\n\t\tGOODBYE!\n")
 #------2D Lists ----------------------------------------------------------------------------------------------
 #2D lists are just lists that contain 1D lists inside of them! 
 
+dataFile = []
+
+with open("week 7/simple-2.csv") as csvfile:
+    file = csv.reader(csvfile)
+
+    for rec in file:
+        dataFile.append(rec)
+
+for i in range(0, len(dataFile)):
+    print(dataFile[i])
+    for j in range(0, len(dataFile[i])):
+        print(dataFile[i][j])
+    print()
