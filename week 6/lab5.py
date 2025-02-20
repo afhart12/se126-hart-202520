@@ -135,9 +135,10 @@ while menu == "y":
         min = 0
         max = len(libnum)
         mid = int((min + max) / 2)
+        search = input("Which book number are you looking for?: ")
 
         while min < max and search.lower() != libnum[mid].lower():
-            if search.lower() < libnum[mid].lower():
+            if search.lower() < libnum[mid - 1].lower():
                 max = mid - 1
             else:
                 #search > name[mid]
@@ -157,9 +158,9 @@ while menu == "y":
 
         found = []
 
-        search = "Avaliable"
-        for i in range(0, len(status))
-            if search == status[i]:
+        search = "available"
+        for i in range(0, len(libnum)):
+            if search.lower() == status[i].lower():
                 found.append(i)
             
         print(f"{libnum[found[i]]:7}  {title[found[i]]:32}  {author[found[i]]:25}  {genre[found[i]]:15} {pgcount[found[i]]:4} {status[found[i]]:9}")
@@ -168,8 +169,8 @@ while menu == "y":
 
         found = []
 
-        search = "On Loan"
-        for i in range(0, len(status))
+        search = "on loan"
+        for i in range(0, len(status)):
             if search == status[i]:
                 found.append(i)
             
