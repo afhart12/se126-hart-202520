@@ -16,6 +16,18 @@
 # 8 - exit the loop
 
 # variable dictionary
+# libnum = library number
+# title = title of book
+# author = author of book
+# genre = genre of book
+# pgcount = page count of book
+# status = available or on loan status of book
+# found = list to hold values found by the program based on the search value
+# search = input value for user to say what they are searching for
+# temp = temporary value used for swap, no real meaning ultimately
+# menu = a value that hold y or n to determine if the main menu loop will continue
+# opt = menu option that the user selects, input statement
+
 import csv
 libnum = []
 title = []
@@ -158,26 +170,21 @@ while menu == "y":
 
         found = []
 
-        search = "available"
         for i in range(0, len(libnum)):
-            if search.lower() == status[i].lower():
-                found.append(i)
-            
-        print(f"{libnum[found[i]]:7}  {title[found[i]]:32}  {author[found[i]]:25}  {genre[found[i]]:15} {pgcount[found[i]]:4} {status[found[i]]:9}")
+            if status[i] == "available": # no need for search value because we are only looking for one preset value
+                print(f"{libnum[i]:7}  {title[i]:32}  {author[i]:25}  {genre[i]:15} {pgcount[i]:4} {status[i]:9}")
+                
 
     elif opt == "7":
 
         found = []
 
-        search = "on loan"
         for i in range(0, len(status)):
-            if search == status[i]:
-                found.append(i)
-            
-        print(f"{libnum[found[i]]:7}  {title[found[i]]:32}  {author[found[i]]:25}  {genre[found[i]]:15} {pgcount[found[i]]:4} {status[found[i]]:9}")
+            if status[i] == "on loan":
+                print(f"{libnum[i]:7}  {title[i]:32}  {author[i]:25}  {genre[i]:15} {pgcount[i]:4} {status[i]:9}")
 
     elif opt == "8":
-        menu == "n"
+        menu = "n"
 
 
 print("Goodbye.")
