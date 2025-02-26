@@ -34,7 +34,7 @@ while menu == "y":
 
         for key in dictionary:
             if search.lower() == dictionary[key]:
-                found.append(dictionary[key])
+                found.append(search)
         
         print(found)
 
