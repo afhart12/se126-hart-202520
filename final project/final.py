@@ -10,13 +10,29 @@
 
 # Variable Dictionary:
 
-
 # variables and lists ----------------------
 name = []
 num = []
 type = []
 status = []
+menu = "y"
+# function(s) ----------------------------------------
+def displayLabels():
+    print(f"{'NAME':22} {'ID NUM':7} {'TYPE':10} {'STATUS':15}")
+    print("------------------------------------------------------------------------------------------------")
 
+def searchFor(listName):
+    for i in range(0, len(listName)): 
+            if search.lower() == listName[i].lower():
+                found.append([i])
+        
+    if not found: 
+        print(f"Sorry, your search for {search} was not found :[")
+    else:
+        print("Your search has been found! Details below:")
+        displayLabels()
+        for i in range(0, len(found)):
+            print(f"{name[found[i]]:22} {num[found[i]]:7} {type[found[i]]:10} {status[found[i]]:15}")
 #connected to file -----------------------------
 import csv
 with open("final project/characters.csv") as csvfile:
@@ -29,4 +45,24 @@ with open("final project/characters.csv") as csvfile:
 
 # disconnected from file ---------------------------
 
-
+while menu == "y":
+    print("--- IT'S ADVENTURE TIME! ---")
+    print("1. Search by name")
+    print("2. Search by character type")
+    print("3. Search by character status")
+    print("4. Battle!")
+    print("5. EXIT")
+    opt = input("Select an option from the choices above(1/2/3/4/5): ")
+    if opt == "1": #search by name
+        found = []
+        search = input("Enter the character NAME that you are searching for: ") # user enters character name
+        searchFor(name)
+    elif opt == "2":
+        found = [] # reset found list to make it empty
+        search = input("Enter the character TYPE that you are looking for: ")
+        searchFor(type)
+    elif opt == "3":
+        found = []
+        search = input("Enter the character STATUS you are searching for: ")
+        searchFor(status)
+    
