@@ -7,7 +7,9 @@
 
 # variable dictionary:
 
-dictionary = {}
+dictionary = {
+
+}
 menu = "y"
 import csv
 
@@ -33,15 +35,29 @@ while menu == "y":
         search = input("What are you searching for? ")
 
         for key in dictionary:
-            if search.lower() == dictionary[key].lower():
+            if search.lower() == dictionary[key]:
                 found.append(key)
         
-        if found != 0:
+        if not found:
+            print(f"We could not find your search for {search}.")
+        else: 
             print(f"We found your search for {search}, details below: ")
             print("-" * 50)
             for i in range(0, len(found)):
                 print(f"{found[i].upper():4} {dictionary[found[i]]}")
             print("-" * 50)
-        else: 
-            print(f"We could not find your search for {search}.")
+
+    elif opt == "3":
+        newWord = input("What word would you like to add?: ")
+        newDef = input("What is this word's definition?: ")
+        for key in dictionary:
+            if newWord != dictionary[key]:
+                dictionary.update({newWord : newDef})
+
+    elif opt == "4":
+        print("Goodbye.")
+        menu = "n"
+
+    else: 
+        print("INVALID ENTRY!! Please try again.")
 
