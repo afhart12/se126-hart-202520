@@ -33,8 +33,15 @@ while menu == "y":
         search = input("What are you searching for? ")
 
         for key in dictionary:
-            if search.lower() == dictionary[key]:
-                found.append(search)
+            if search.lower() == dictionary[key].lower():
+                found.append(key)
         
-        print(found)
+        if found != 0:
+            print(f"We found your search for {search}, details below: ")
+            print("-" * 50)
+            for i in range(0, len(found)):
+                print(f"{found[i].upper():4} {dictionary[found[i]]}")
+            print("-" * 50)
+        else: 
+            print(f"We could not find your search for {search}.")
 

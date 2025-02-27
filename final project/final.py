@@ -19,7 +19,7 @@ menu = "y"
 # function(s) ----------------------------------------
 def displayLabels():
     print(f"{'NAME':22} {'ID NUM':7} {'TYPE':10} {'STATUS':15}")
-    print("------------------------------------------------------------------------------------------------")
+    print("-" * 50)
 
 def searchFor(listName):
     for i in range(0, len(listName)): 
