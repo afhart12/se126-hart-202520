@@ -22,6 +22,9 @@ def displayLabels():
     print(f"{'NAME':22} {'ID NUM':7} {'TYPE':10} {'STATUS':15}")
     print("-" * 50)
 
+def optionChoice(question):
+    if question != "1" or "2":
+        print("You have been DEFEATED! Better luck next time!")
 #connected to file -----------------------------
 import csv
 with open("final project/characters.csv") as csvfile:
@@ -96,16 +99,30 @@ while menu == "y":
     elif opt == "5":
         print("Your journey begins! Here's a quick tutorial to get you started:")
         print("You will be given two options for each scenario.")
-        print("One option will be labeled as A, and the other one will be labeled as B. Please only enter A or B.")
+        print("One option will be labeled as 1, and the other one will be labeled as 2. Please only enter 1 or 2, or you will LOSE THE BATTLE!")
         ready = input("Ready to get started? (Y/N): ")
+        start = ""
         if ready.lower() == "y":
             start = "y"
         else: 
             print("Looks like you aren't ready to battle yet. Come back when you're ready!")
-        if start == "y":
-            print("Perfect! Let's get started.")
+        while start == "y":
+            print("Let's get started.")
             userName = input("Please enter YOUR name: ")
             print(f"Welcome, {userName}! Today, you will embark on an adventure with Finn and Jake, two of Ooo's greatest warriors!")
             print("You get a call from Princess Bubblegum. She seems worried.")
-            print("Princess Bubblegum: Come quick!")
-    
+            print("Do you respond to the call for adventure?")
+            print("1: Yes, rush to the Candy Kingdom!")
+            print("2: No, stay at home and make bacon pancakes!")
+            q1 = input("Your choice(1/2): ")
+            optionChoice(q1)
+            if q1 == "1":
+                print("Good choice! You rush to the castle to find that one of Princess Bubblegum's experiments has gone wrong!")
+                print("")
+            elif q1 == "2":
+                print("You have chose to stay at home with Jake and make bacon pancakes.")
+                print("Finn responds to the call and gets defeated in battle! Princess Bubblegum is VERY angry!!")
+                print("You LOSE!")
+                start = "n"
+            
+
