@@ -26,20 +26,20 @@ with open("week 8/words.csv") as csvfile: # file open
     for rec in file:
         dictionary.update({rec[0] : rec[1]})
 
-while menu == "y":
+while menu == "y": #this loop keeps the menu running until the user selects option 4
     print("My Programming Dictionary Menu: ")
     print("1. Show all words(including definitions)")
     print("2. Search for a word")
     print("3. Add a word")
     print("4. EXIT")
     opt = input("Your selection(1/2/3/4): ")
-    if opt == "1":
+    if opt == "1": #print all words from the dictionary
         print(f"{'WORD':15} {'DEFINITION':158}")
         for key in dictionary:
             print(f"{key:15} {dictionary[key]:158}")
 
     elif opt == "2":
-        found = []
+        found = [] # value for keys in the dictionary that match the search query
         search = input("What are you searching for?: ")
 
         for key in dictionary:
@@ -47,9 +47,9 @@ while menu == "y":
                 found.append(key)
             print(found)
         
-        if not found:
+        if not found: # no matching results, found list is empty
             print(f"We could not find your search for {search}.")
-        else: 
+        else: # found list has one or more values
             print(f"We found your search for {search}, details below: ")
             print("-" * 50)
             for i in range(0, len(found)):
@@ -63,17 +63,17 @@ while menu == "y":
         flag = "green"
 
         for key in dictionary:
-            if newWord == key:
+            if newWord == key: #checks if the new word is the same as an existing key in the dictionary
                 flag = "red"
 
-        if flag != "red":
-            dictionary.update({newWord : newDef})
-        else:
+        if flag != "red": #if the flag value does not become red, the program is clear to add the word to the dictionary
+            dictionary.update({newWord : newDef}) 
+        else: #the program cannot add the word because it already exists
             print(f"Sorry, this dictonary already contains the word {newWord}.")
 
     elif opt == "4":
         print("Goodbye.")
-        menu = "n"
+        menu = "n" #ends the loop
 
     else: 
         print("INVALID ENTRY!! Please try again.")
