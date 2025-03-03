@@ -147,6 +147,12 @@ while menu == "y":
                             print("")
                             q5 = input("Your choice(1/2): ")
                             optionChoice(q5)
+                            if q5 == "1": #user wins the game
+                                print("")
+                                start = "n" # this value HAS to become "n" in order to end the game, regardless of what choice the user picks for q5!!
+                            elif q5 == "2": # user loses, bad choice - question 5
+                                print("")
+                                start = "n"
                     elif q3 == "2": #bad choice - question 3
                         print("")
                         start = "n"
