@@ -3,9 +3,17 @@
 # Lab 7
 # 2/25/2025
 
-#Program Prompt: 
+#Program Prompt: Access the words.csv file and store the data to a dictionary, where each word in the file is a key of the dictionary and the value stored to each key is the word’s corresponding definition. Then, create a repeatable program that allows a user to interact with the dictionary based on the following menu: 1 = show all words, 2 = search for a word, 3 = add a word, 4 = exit
 
 # variable dictionary:
+#dictionary = my created dictionary that holds all of the words from the csv file and their definitions
+# menu = a value to determine if the while loop keeps running
+# opt = menu option that the user selects, either 1 2 3 or 4
+# found = a list to hold the values found by my sequential search loop that relate to the users search
+# search = a value holding the users search entry
+# newWord = a value holding the users entry for a new word
+# newdef = a value holding the users entry for a new definition relating to the word they put in
+# flag = a variable that changes based on if the new word is the same as a word that already exists in the dictionary
 
 dictionary = {
 
@@ -32,11 +40,12 @@ while menu == "y":
 
     elif opt == "2":
         found = []
-        search = input("What are you searching for? ")
+        search = input("What are you searching for?: ")
 
         for key in dictionary:
-            if search.lower() == dictionary[key]:
+            if search.lower() in key.lower():
                 found.append(key)
+            print(found)
         
         if not found:
             print(f"We could not find your search for {search}.")
@@ -44,15 +53,23 @@ while menu == "y":
             print(f"We found your search for {search}, details below: ")
             print("-" * 50)
             for i in range(0, len(found)):
-                print(f"{found[i].upper():4} {dictionary[found[i]]}")
+                print(f"{found[i]:4} {dictionary[found[i]]}")
             print("-" * 50)
 
     elif opt == "3":
         newWord = input("What word would you like to add?: ")
         newDef = input("What is this word's definition?: ")
+
+        flag = "green"
+
         for key in dictionary:
-            if newWord != dictionary[key]:
-                dictionary.update({newWord : newDef})
+            if newWord == key:
+                flag = "red"
+
+        if flag != "red":
+            dictionary.update({newWord : newDef})
+        else:
+            print(f"Sorry, this dictonary already contains the word {newWord}.")
 
     elif opt == "4":
         print("Goodbye.")
