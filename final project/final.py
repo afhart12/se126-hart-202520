@@ -18,13 +18,14 @@ type = []
 status = []
 menu = "y"
 # function(s) ----------------------------------------
-def displayLabels():
+def displayLabels(): #prints labels for any instance in which the program will have to display data, used in menu options 1, 2, 3, and 4
     print(f"{'NAME':22} {'ID NUM':7} {'TYPE':10} {'STATUS':15}")
     print("-" * 50)
 
-def optionChoice(question):
-    if question != "1" or "2":
-        print("You have been DEFEATED! Better luck next time!")
+def optionChoice(question): # the paramater value is the question input value where the user will enter an option from the ones provided
+    if question != "1" or "2": #if the user enters anything other than a "1" or "2"
+        print("You have been DEFEATED! Better luck next time!") # the user will lose the game!
+        #(this was my best idea, there would be way too many loops if I did the other option I thought of)
 #connected to file -----------------------------
 import csv
 with open("final project/characters.csv") as csvfile:
@@ -114,12 +115,42 @@ while menu == "y":
             print("Do you respond to the call for adventure?")
             print("1: Yes, rush to the Candy Kingdom!")
             print("2: No, stay at home and make bacon pancakes!")
-            q1 = input("Your choice(1/2): ")
-            optionChoice(q1)
-            if q1 == "1":
+            q1 = input("Your choice(1/2): ") # for reference, a GOOD CHOICE will result in the game continuing, and a BAD CHOICE will end the game and return to the menu
+            optionChoice(q1) #using my handmade function to check the validity of the user input, see the function section above for details
+            if q1 == "1": #good choice - question 1
                 print("Good choice! You rush to the castle to find that one of Princess Bubblegum's experiments has gone wrong!")
-                print("")
-            elif q1 == "2":
+                print("There are a bunch of infected candy people, wandering around, searching to infect more citizens!")
+                print("What do you do?")
+                print("1: Immediately charge at the infected citizens and try to wipe them out before they infect more citizens!")
+                print("2: Go see Princess Bubblegum and ask for her advice.")
+                q2 = input("Your choice(1/2): ")
+                optionChoice(q2)
+                if q2 == "1": #bad choice - question 2
+                    print(f"Finn, Jake, and {userName} charge at the infected candy people! Jake gets bitten and infected, Finn gets overpowered by the infected, and you face an angry Princess.")
+                    print("She yells from her window and informs you that SHE HAD THE ANTIDOTE! She needed YOU to claim it and use it on the people!")
+                    print("YOU LOSE!")
+                    start = "n"
+                elif q2 == "2": #good choice - question 2
+                    print("The three of you run to Princess Bubblegum's quarters in the castle. She is there, worried, but brewing up a solution.")
+                    print("You spot a glowing bucket on her desk. She hands the bucket containing the ANTIDOTE to you and tells you to use it on the people.")
+                    print("You rush back outside. ")
+                    q3 = input("Your choice(1/2): ")
+                    optionChoice(q3)
+                    if q3 == "1": #good choice - question 3
+                        print("")
+                        q4 = input("Your choice(1/2): ")
+                        optionChoice(q4)
+                        if q4 == "1": #bad choice - question 4
+                            print("")
+                            start = "n"
+                        elif q4 == "2": #good choice - question 4
+                            print("")
+                            q5 = input("Your choice(1/2): ")
+                            optionChoice(q5)
+                    elif q3 == "2": #bad choice - question 3
+                        print("")
+                        start = "n"
+            elif q1 == "2": #bad choice - question 1
                 print("You have chose to stay at home with Jake and make bacon pancakes.")
                 print("Finn responds to the call and gets defeated in battle! Princess Bubblegum is VERY angry!!")
                 print("You LOSE!")
