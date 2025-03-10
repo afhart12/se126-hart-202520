@@ -10,6 +10,22 @@
 # Option 6 will exit the program (and the main loop).
 
 # Variable Dictionary:
+# name = list to hold all of the names found in rec[0] of the csv file
+# num = list to hold all of the id numbers found in rec[1]
+# type = list to hold all of the character types found in rec[2]
+# status = list to hold all of the character status values, all found in rec[3]
+# menu = a y or n value used to run the main menu loop
+# displayLabels = see notes next to the function
+# optionChoice = see notes next to the function
+# opt = menu option, the value contains user input of which menu choice they select
+# found =  a list that holds values that match search criteria
+# search = a value that holds the search criteria entered by the user
+# ready = a y or n value that is determined by user input, used to determine whether or not to proceed to the text adventure game or return to the menu
+# start = if ready == "y", start = "y", and when start == "y" the battle loop begins and the text adventure will start
+# when start == "n", the battle loop ends
+# userName = user input of the users name, displayed in the text adventure
+# q1, q2, q3, q4, q5 = the values that hold the users choice based on what they enter after they read the question. Based on what these values are, the game will decide whether to continue or loop back to the start/menu
+
 
 # variables and lists ----------------------
 name = []
