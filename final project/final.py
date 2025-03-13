@@ -149,28 +149,30 @@ while menu == "y":
                 elif q2 == "2": #good choice - question 2
                     print("The three of you run to Princess Bubblegum's quarters in the castle. She is there, worried, but brewing up a solution.")
                     print("You spot a glowing bucket on her desk. She hands the bucket containing the ANTIDOTE to you and tells you to use it on the people.")
-                    print("You rush back outside. ")
+                    print("You rush back outside. A zombie appears behind you! What do you do??")
+                    print("1. RUN!!!!")
+                    print("2. FIGHT!!!")
                     q3 = input("Your choice(1/2): ")
                     optionChoice(q3)
                     if q3 == "1": #good choice - question 3
-                        print("")
+                        print("You swing at the zombie and knock him to the ground! Good job!")
+                        print("You take the antidote out and use a drop of it on the zombie. The citizen snaps back to normal and thanks you.")
+                        print("However, there is more work to be done! How do we cure the rest of the people?")
+                        print("1. Use a contraption to spray the antidote over the people.")
+                        print("2. Put a drop of the antidote on everyone INDIVIDUALLY.")
                         q4 = input("Your choice(1/2): ")
                         optionChoice(q4)
-                        if q4 == "1": #bad choice - question 4
-                            print("")
+                        if q4 == "1": #user wins the game
+                            print("Congratulations!! You end the apocalypse and Princess BUbblegum is grateful!")
+                            print("The Candy Kingdom is saved! You WIN!!!")
+                            start = "n" # this value HAS to become "n" in order to end the game, regardless of what choice the user picks for q5!!
+                        elif q4 == "2": # user loses, bad choice - question 5
+                            print("Its WAY too slow! You needed to be quicker, because there are too many zombies to get to at once!")
+                            print("You were so close! Better luck next time!")
                             start = "n"
-                        elif q4 == "2": #good choice - question 4
-                            print("")
-                            q5 = input("Your choice(1/2): ")
-                            optionChoice(q5)
-                            if q5 == "1": #user wins the game
-                                print("")
-                                start = "n" # this value HAS to become "n" in order to end the game, regardless of what choice the user picks for q5!!
-                            elif q5 == "2": # user loses, bad choice - question 5
-                                print("")
-                                start = "n"
                     elif q3 == "2": #bad choice - question 3
-                        print("")
+                        print("What kind of warrior are you?? The zombie catches up to you and you are INFECTED!")
+                        print("YOU LOSE!")
                         start = "n"
             elif q1 == "2": #bad choice - question 1
                 print("You have chose to stay at home with Jake and make bacon pancakes.")
