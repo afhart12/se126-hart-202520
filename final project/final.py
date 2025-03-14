@@ -40,7 +40,8 @@ def displayLabels(): #prints labels for any instance in which the program will h
 
 def optionChoice(question): # the paramater value is the question input value where the user will enter an option from the ones provided
     if question != "1" or "2": #if the user enters anything other than a "1" or "2"
-        print("You have been DEFEATED! Better luck next time!") # the user will lose the game!
+        print("---") # the user will lose the game!
+        start = "n"
         #(this was my best idea, there would be way too many loops if I did the other option I thought of)
 #connected to file -----------------------------
 import csv
@@ -154,7 +155,7 @@ while menu == "y":
                     print("2. FIGHT!!!")
                     q3 = input("Your choice(1/2): ")
                     optionChoice(q3)
-                    if q3 == "1": #good choice - question 3
+                    if q3 == "2": #good choice - question 3
                         print("You swing at the zombie and knock him to the ground! Good job!")
                         print("You take the antidote out and use a drop of it on the zombie. The citizen snaps back to normal and thanks you.")
                         print("However, there is more work to be done! How do we cure the rest of the people?")
@@ -170,7 +171,7 @@ while menu == "y":
                             print("Its WAY too slow! You needed to be quicker, because there are too many zombies to get to at once!")
                             print("You were so close! Better luck next time!")
                             start = "n"
-                    elif q3 == "2": #bad choice - question 3
+                    elif q3 == "1": #bad choice - question 3
                         print("What kind of warrior are you?? The zombie catches up to you and you are INFECTED!")
                         print("YOU LOSE!")
                         start = "n"
